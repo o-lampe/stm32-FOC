@@ -11,7 +11,7 @@
 // HallSensor(int hallA, int hallB , int cpr, int index)
 //  - hallA, hallB, hallC    - HallSensor A, B and C pins
 //  - pp                     - pole pairs
-HallSensor sensor = HallSensor(2, 3, 4, 14);
+HallSensor sensor = HallSensor(PA0,PF1,PC15,15);
 
 // Interrupt routine intialisation
 // channel A and B callbacks
@@ -25,7 +25,7 @@ void setup() {
   Serial.begin(115200);
 
   // check if you need internal pullups
-  sensor.pullup = Pullup::USE_EXTERN;
+  //sensor.pullup = Pullup::USE_EXTERN;
   
   // initialise encoder hardware
   sensor.init();
